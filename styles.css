@@ -1,0 +1,87 @@
+/* Minimal Decathlon-like theme for Rabat Product */
+:root{
+  --primary:#0070c0;
+  --accent:#00a3ff;
+  --bg:#f6f9fc;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --radius:8px;
+  --gap:16px;
+  --max-width:1100px;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0b1220;
+  direction:rtl;
+  -webkit-font-smoothing:antialiased;
+}
+
+header{
+  background:#fff;
+  border-bottom:1px solid #e6eef8;
+  position:sticky;
+  top:0;
+  z-index:30;
+}
+header .logo{display:flex;align-items:center;padding:12px 20px;max-width:var(--max-width);margin:0 auto}
+header .logo img{height:48px;width:auto;border-radius:6px;object-fit:cover}
+header nav{display:flex;align-items:center;justify-content:flex-end;padding:8px 20px}
+header nav ul{list-style:none;display:flex;gap:12px;margin:0;padding:0}
+header nav a{color:var(--primary);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:6px}
+.lang-switch{margin-left:12px;padding-right:8px}
+
+.hero{
+  max-width:var(--max-width);
+  margin:20px auto;
+  background:linear-gradient(90deg, rgba(0,112,192,0.06), rgba(0,163,255,0.03));
+  border-radius:var(--radius);
+  padding:28px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+}
+.hero h1{font-size:1.6rem;margin:0;color:var(--primary)}
+.hero p{margin:6px 0;color:var(--muted)}
+.hero-cta{display:flex;gap:10px}
+.btn-primary, .btn-outline{
+  padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block
+}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+
+.products{max-width:var(--max-width);margin:18px auto;padding:0 12px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.product{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(12,33,64,0.06)}
+.product h3{margin:0 0 8px;font-size:1.05rem}
+.sku{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:8px}
+.product select{width:100%;margin-bottom:8px;padding:8px;border:1px solid #e6eef8;border-radius:6px;background:#fbfdff}
+.service-badge{font-size:0.8rem;color:#065985;padding:6px;border-radius:6px;background:rgba(0,112,192,0.06);text-align:center}
+
+.order-form{max-width:700px;margin:18px auto;padding:12px}
+.order-form form{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(12,33,64,0.05)}
+.order-form input, .order-form textarea, .order-form select{
+  width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #e6eef8;background:#fbfdff
+}
+.order-form button{width:100%;padding:12px;border-radius:8px;background:var(--primary);color:#fff;border:0;font-weight:700}
+
+footer{max-width:var(--max-width);margin:24px auto;padding:12px;text-align:center;color:var(--muted)}
+
+/* WhatsApp float */
+.whatsapp-float{position:fixed;bottom:18px;left:18px;background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;z-index:50;text-decoration:none;box-shadow:0 6px 22px rgba(0,0,0,0.18)}
+.whatsapp-float img{width:28px;height:28px}
+
+/* Responsive */
+@media (max-width:900px){
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:520px){
+  .product-grid{grid-template-columns:1fr}
+  header nav{display:none}
+  .logo{justify-content:center}
+}
